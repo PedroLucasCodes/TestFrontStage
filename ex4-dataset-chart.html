@@ -81,7 +81,7 @@
     }
 
     // Função que printa o dataset randomico em tela
-    function printDatasetOnScreen(dataset) {
+    function printDataset(dataset) {
         console.log("[INFO] Writing on screen...");
         console.log("[INFO] Raw Values:", dataset);
         let el = "<ul>"
@@ -97,7 +97,7 @@
     // Função main
     function main() {
         let dataset_random = generateDataset(10);
-        printDatasetOnScreen(dataset_random);
+        printDataset(dataset_random);
         createChart();
     }
 
