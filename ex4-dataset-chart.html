@@ -45,6 +45,7 @@
 <!-- Chart code -->
 <script>
 
+    // Função que cria o Gráfico
     function createChart() {
         const ctx = document.getElementById('myChart');
 
@@ -61,7 +62,7 @@
     }
 
 
-
+    // Função que gera cada valor do dataset randomico
     function generateData(index) {
         const value = Math.round((Math.random() * 100 - 30) + 50);
         return {
@@ -70,6 +71,7 @@
         };
     }
 
+    // Função que gera o dataset randomico
     function generateDataset(count) {
         var data = [];
         for (var i = 0; i < count; ++i) {
@@ -78,7 +80,8 @@
         return data;
     }
 
-    function writeDataset(dataset) {
+    // Função que printa o dataset randomico em tela
+    function printDatasetOnScreen(dataset) {
         console.log("[INFO] Writing on screen...");
         console.log("[INFO] Raw Values:", dataset);
         let el = "<ul>"
@@ -91,11 +94,12 @@
         $("#dataset").html(el);
     }
 
-    function start() {
-        createChart();
+    // Função main
+    function main() {
         let dataset_random = generateDataset(10);
-        writeDataset(dataset_random);
+        printDatasetOnScreen(dataset_random);
+        createChart();
     }
 
-    start();
+    main();
 </script>
