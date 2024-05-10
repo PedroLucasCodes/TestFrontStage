@@ -23,7 +23,24 @@
                 <p class="card-text">Mas algo está faltando em minha lógica e tudo sai estranho...</p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"> Valor atual: <span id="value"></span></li>
+                <li class="list-group-item"> Saída esperada:
+                    <div class="values">
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                        <span>10</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"> Saída atual: <div id="current_value" class="values"></div>
+                </li>
             </ul>
         </div>
     </div>
@@ -36,9 +53,10 @@
         return new Promise((resolve) => setTimeout(resolve, ms));
     }
     function write() {
-        console.log("writing..:", current_val);
-        let el = `<p>${current_val}</p>`
-        $("#value").append(el);
+        console.log("[INFO] Writing on screen...");
+        console.log("[INFO] current_val:", current_val);
+        let el = `<span>${current_val}</span>`
+        $("#current_value").append(el);
     }
     async function start() {
         while (true) {
@@ -48,3 +66,9 @@
     }
     start();
 </script>
+
+<style>
+    .values span{
+        margin-right: 5px;
+    }
+</style>
